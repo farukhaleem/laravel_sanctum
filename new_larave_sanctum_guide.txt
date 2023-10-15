@@ -1,0 +1,21 @@
+laravel new laravel_sanctum
+cd laravel_sanctum
+composer require laravel/sanctum
+php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
+// create and configure database
+php artisan migrate
+php artisan make:controller AuthController
+php artisan make:controller TasksController -r // resource type of controller
+php artisan make:model Task -m // model with migration
+php artisan route:list
+php artisan make:request StoreUserRequest
+php artisan make:request LoginUserRequest
+// create and run task migration named create_tasks_table
+php artisan make:factory TaskFactory
+php artisan tinker
+// User::factory()->times(25)->create(); 
+// Task::factory()->times(250)->create(); 
+php artisan make:resource TasksResource
+php artisan make:request StoreTaskRequest
+php artisan schedule:list
+php artisan schedule:work
